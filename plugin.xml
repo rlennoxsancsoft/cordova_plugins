@@ -1,0 +1,31 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-rlennoxTestPlugin" version="0.0.1">
+    <name>RlennoxTestPlugin</name>
+
+    <description>An Android Cordova plugin that allows users to display simple Toast messages at the bottom of the screen.</description>
+    <license>MIT</license>
+
+    <keywords>cordova,android,toast,message,alert</keywords>
+    <repo>https://github.com/rlennoxsancsoft/cordova_plugins.git</repo>
+    <issue>https://github.com/rlennoxsancsoft/cordova_plugins/issues</issue>
+  
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+  
+    <js-module src="www/rlennoxtestplugin.js" name="rlennoxTestPlugin">
+        <clobbers target="window.plugins.rlennoxTestPlugin" />
+    </js-module>
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="RlennoxTestPlugin">
+                <param name="android-package" value="com.sancsoft.cordova.plugin.RlennoxTestPlugin"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/RlennoxTestPlugin.java" target-dir="src/com/sancsoft/cordova/plugin" />
+    </platform>
+</plugin>
